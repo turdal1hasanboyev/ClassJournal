@@ -15,6 +15,11 @@ from .models import (
 )
 
 
+admin.site.site_header = "Class Journal Admin Panel"
+admin.site.site_title = "Class Journal Admin Panel"
+admin.site.index_title = "Welcome to Class Journal Admin Panel!"
+
+
 # Custom User modeli
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
