@@ -1,18 +1,15 @@
 from django.urls import path
 
-from .views import RegisterView, LogoutView
-
 from .views import (
-    UserListView, UserDetailView, 
-    SubjectListView, SubjectDetailView, 
-    ClassroomListView, ClassroomDetailView, 
-    StudentListView, StudentDetailView, 
-    GradeListView, GradeDetailView, 
+    UserListView, UserDetailView,
+    SubjectListView, SubjectDetailView,
+    ClassroomListView, ClassroomDetailView,
+    StudentListView, StudentDetailView,
+    GradeListView, GradeDetailView,
     AttendanceListView, AttendanceDetailView,
-    HomeworkListView, HomeworkDetailView, 
-    HomeworkSubmissionListView, HomeworkSubmissionDetailView, 
+    HomeworkListView, HomeworkDetailView,
+    HomeworkSubmissionListView, HomeworkSubmissionDetailView,
     NotificationListView, NotificationDetailView,
-    LoginView,
 )
 
 urlpatterns = [
@@ -26,7 +23,8 @@ urlpatterns = [
 
     # Sinflar
     path('classrooms/', ClassroomListView.as_view(), name='classroom-list'),
-    path('classrooms/<int:pk>/', ClassroomDetailView.as_view(), name='classroom-detail'),
+    path('classrooms/<int:pk>/', ClassroomDetailView.as_view(),
+         name='classroom-detail'),
 
     # O‘quvchilar
     path('students/', StudentListView.as_view(), name='student-list'),
@@ -38,21 +36,22 @@ urlpatterns = [
 
     # Davomat
     path('attendance/', AttendanceListView.as_view(), name='attendance-list'),
-    path('attendance/<int:pk>/', AttendanceDetailView.as_view(), name='attendance-detail'),
+    path('attendance/<int:pk>/', AttendanceDetailView.as_view(),
+         name='attendance-detail'),
 
     # Uy vazifalari
     path('homeworks/', HomeworkListView.as_view(), name='homework-list'),
     path('homeworks/<int:pk>/', HomeworkDetailView.as_view(), name='homework-detail'),
 
     # Uy vazifasi javoblari
-    path('homework-submissions/', HomeworkSubmissionListView.as_view(), name='homework-submission-list'),
-    path('homework-submissions/<int:pk>/', HomeworkSubmissionDetailView.as_view(), name='homework-submission-detail'),
+    path('homework-submissions/', HomeworkSubmissionListView.as_view(),
+         name='homework-submission-list'),
+    path('homework-submissions/<int:pk>/',
+         HomeworkSubmissionDetailView.as_view(), name='homework-submission-detail'),
 
     # Bildirishnomalar
-    path('notifications/', NotificationListView.as_view(), name='notification-list'),
-    path('notifications/<int:pk>/', NotificationDetailView.as_view(), name='notification-detail'),
-
-    path('register/', RegisterView.as_view(), name='register'),  # Register
-    path('logout/', LogoutView.as_view(), name='logout'),  # Logout
-    path('login/', LoginView.as_view(), name='login'),  # Login
+    path('notifications/', NotificationListView.as_view(),
+         name='notification-list'),
+    path('notifications/<int:pk>/', NotificationDetailView.as_view(),
+         name='notification-detail'),
 ]

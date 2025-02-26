@@ -16,7 +16,8 @@ class User(AbstractUser):
     )
 
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
-    phone_number = models.CharField(max_length=15, blank=True, null=True, unique=True, db_index=True)
+    phone_number = models.CharField(
+        max_length=15, blank=True, null=True, unique=True, db_index=True)
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True)
 
